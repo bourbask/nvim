@@ -4,6 +4,8 @@ local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 local dap = require("dap")
 
+vim.g.mapleader = " "
+
 -- General keymaps
 map("n", "<Leader>w", ":w<CR>", opts)                   -- Save with <Leader>w
 map("n", "<Leader>q", ":q<CR>", opts)                   -- Quit with <Leader>q

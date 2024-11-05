@@ -5,7 +5,7 @@ SOURCE_DIR="$(pwd)"
 
 # Determine destination based on the OS
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    DEST_DIR="$HOME/.local/share/nvim"
+    DEST_DIR="$HOME/.config/nvim"
 elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "win32" ]]; then
     DEST_DIR="/c/Users/KREDG/AppData/Local/nvim"
 else
