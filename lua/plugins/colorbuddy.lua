@@ -1,3 +1,8 @@
 -- lua/plugins/colorbuddy.lua
 
-require("colorbuddy").colorscheme("cobalt2")
+local cb = require("colorbuddy")
+
+vim.notify("--------------Colorbuddy loaded ---------------------")
+cb.colorscheme("cobalt2")
+vim.cmd("colorscheme cobalt2")
+vim.notify("---------- Cobalt2 applied --------------")
