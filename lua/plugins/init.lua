@@ -11,18 +11,32 @@ if not vim.loop.fs_stat(lazypath) then
         "--branch=stable", lazypath
     })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
+
+    -- Lualine plugin
     { "nvim-lualine/lualine.nvim", config = function() require("plugins.lualine") end },
+
+    -- Theme plugin
     { 
-        "tjdevries/colorbuddy.nvim", 
-        config = function() require("plugins.colorbuddy") end 
+        "folke/tokyonight.nvim", 
+        config = function()
+           vim.cmd("colorscheme tokyonight-night")
+        end
     },
-    { 
-        "lalitmee/cobalt2.nvim", 
-        requires = "tjdevries/colorbuddy.nvim" 
+
+    -- Tree view plugin
+    {
+        "nvim-tree/nvim-tree.lua",
+        requires = { "nvim-tree/nvim-web-devicons" }, -- For file icons (optional)
+        config = function()
+            require("plugins.nvim-tree")
+        end
     },
+
+    -- Manager for LSP, DAP, etc.
     { "williamboman/mason.nvim", config = function() require("plugins.mason") end },
     "tpope/vim-surround",
 
